@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ecms.dbms.controllers.AddCourseController"
+            prefWidth="700" prefHeight="500">
+
+    <children>
+        <VBox spacing="12" layoutX="50" layoutY="40" prefWidth="600">
+
+            <Label text="Add New Course" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <TextField fx:id="courseNameField" promptText="Course Name"/>
+            <TextArea fx:id="descriptionArea" promptText="Course Description" prefRowCount="3"/>
+            <TextField fx:id="categoryField" promptText="Category (e.g., Programming, Math)"/>
+            <TextField fx:id="durationField" promptText="Duration (hours or days)"/>
+            <TextField fx:id="prerequisiteField" promptText="Prerequisite (if any)"/>
+            <TextField fx:id="priceField" promptText="Price (e.g., 499.99)"/>
+
+            <Button text="Add Course" onAction="#handleAddCourse"
+                    style="-fx-background-color: #2196f3; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </children>
+</AnchorPane>
+

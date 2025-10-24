@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.ecms.dbms.controllers.MyLearnersController"
+            prefWidth="1011" prefHeight="800"
+            style="-fx-background-color: #f5f5f5;">
+
+    <Label layoutX="20" layoutY="10" text="My Learners"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="learnerTable"
+               layoutX="20" layoutY="50"
+               prefWidth="760" prefHeight="420">
+        <columns>
+            <TableColumn fx:id="colLearnerName" text="Learner Name" prefWidth="250"/>
+            <TableColumn fx:id="colCourseName" text="Course Name" prefWidth="250"/>
+            <TableColumn fx:id="colInstructorName" text="Instructor Name" prefWidth="240"/>
+        </columns>
+    </TableView>
+
+</AnchorPane>
+

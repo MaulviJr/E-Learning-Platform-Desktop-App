@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1011.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecms.dbms.controllers.MyProfileController">
+    <stylesheets>
+        <URL value="@/styles/myprofile.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="413.0" layoutY="55.0" prefHeight="71.0" prefWidth="224.0" text="My Profile">
+         <font>
+            <Font size="49.0" />
+         </font></Label>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="153.0" layoutY="184.0">
+         <image>
+            <Image url="@../imgs/user.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="407.0" layoutY="212.0" text="Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblName" layoutX="407.0" layoutY="224.0" text="setName">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="283.0" text="Email">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmail" layoutX="405.0" layoutY="296.0" prefHeight="59.0" prefWidth="538.0" text="setEmail" wrapText="true">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="364.0" text="Quaification">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblQualification" layoutX="407.0" layoutY="377.0" text="setQual">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="443.0" text="Specialization">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSpecialization" layoutX="407.0" layoutY="456.0" text="setSpec">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Line endX="683.0" layoutX="254.0" layoutY="666.0" startX="-100.0" />
+      <Line endX="407.0" layoutX="247.0" layoutY="127.0" startX="123.0" />
+   </children>
+</AnchorPane>

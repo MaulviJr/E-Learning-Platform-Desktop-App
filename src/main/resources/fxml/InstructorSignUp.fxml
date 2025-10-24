@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecms.dbms.controllers.InstructorSignUpController">
+    <stylesheets>
+        <URL value="@/styles/instructorsignup.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="nameText" layoutX="477.0" layoutY="310.0" prefHeight="25.0" prefWidth="327.0" />
+      <TextField fx:id="emailText" layoutX="476.0" layoutY="363.0" prefHeight="25.0" prefWidth="327.0" />
+      <TextField fx:id="contactText" layoutX="477.0" layoutY="413.0" prefHeight="25.0" prefWidth="327.0" />
+      <TextField fx:id="specializationText" layoutX="477.0" layoutY="459.0" />
+      <TextField fx:id="username" layoutX="478.0" layoutY="508.0" prefHeight="25.0" prefWidth="327.0" />
+      <TextField fx:id="qualificationText" layoutX="654.0" layoutY="459.0" />
+      <Label layoutX="507.0" layoutY="167.0" text="Instructor Signup">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="478.0" layoutY="287.0" text="Name" />
+      <Label layoutX="655.0" layoutY="441.0" text="Qualification" />
+      <Label layoutX="479.0" layoutY="343.0" text="Email" />
+      <Label layoutX="477.0" layoutY="392.0" prefHeight="17.0" prefWidth="149.0" text="Contact No" />
+      <Label layoutX="477.0" layoutY="441.0" text="Specialization" />
+      <Label layoutX="479.0" layoutY="489.0" text="Username" />
+      <Label layoutX="478.0" layoutY="534.0" text="Password" />
+      <Button layoutX="479.0" layoutY="595.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="25.0" prefWidth="327.0" text="Submit" />
+      <PasswordField fx:id="password" layoutX="479.0" layoutY="560.0" prefHeight="25.0" prefWidth="327.0" />
+   </children>
+</AnchorPane>
