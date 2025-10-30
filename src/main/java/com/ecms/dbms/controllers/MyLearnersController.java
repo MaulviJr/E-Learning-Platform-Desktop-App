@@ -48,7 +48,6 @@ public void initialize(URL url, ResourceBundle rb) {
     int instructorId = SessionManager.getLoggedInInstructor().getInstructorId();
     SubscriptionDAO dao = new SubscriptionDAO(DatabaseConnection.getConnection());
     List<EnrolledLearner> list = dao.getLearnersByInstructorId(instructorId);
-
     learnerTable.setItems(FXCollections.observableArrayList(list));
 }  
     

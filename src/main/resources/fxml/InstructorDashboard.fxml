@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecms.dbms.controllers.InstructorDashboardController">
    <center>
       <AnchorPane fx:id="contentArea" prefHeight="800.0" prefWidth="1003.0" BorderPane.alignment="CENTER" />
@@ -15,6 +14,7 @@
             <Button fx:id="courseBtn" layoutX="-2.0" layoutY="215.0" mnemonicParsing="false" onAction="#showMyCourses" prefHeight="25.0" prefWidth="270.0" text="My Course" />
             <Button fx:id="learnerBtn" layoutX="-1.0" layoutY="248.0" mnemonicParsing="false" onAction="#showMyLearners" prefHeight="25.0" prefWidth="270.0" text="My Students" />
             <Button fx:id="profileBtn" layoutX="-1.0" layoutY="283.0" mnemonicParsing="false" onAction="#showMyProfile" prefHeight="25.0" prefWidth="270.0" text="My Profile" />
+            <Button fx:id="logoutBtn" layoutX="-1.0" layoutY="714.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="270.0" text="Logout" />
          </children>
       </AnchorPane>
    </left>

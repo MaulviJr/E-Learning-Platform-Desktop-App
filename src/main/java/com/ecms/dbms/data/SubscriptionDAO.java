@@ -3,6 +3,7 @@
  */
 package com.ecms.dbms.data;
 
+import com.ecms.dbms.models.Course;
 import com.ecms.dbms.models.EnrolledLearner;
 import com.ecms.dbms.models.Subscription;
 import java.sql.*;
@@ -56,6 +57,20 @@ public class SubscriptionDAO {
         }
         return list;
     }
+    
+    public boolean isAlreadySubscribed(int learnerId, int courseId) {
+    String sql = "SELECT 1 FROM subscription WHERE Learner_ID = ? AND Course_ID = ?";
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, learnerId);
+        stmt.setInt(2, courseId);
+        ResultSet rs = stmt.executeQuery();
+        return rs.next(); // true if subscription exists
+    } catch (SQLException e) {
+        System.out.println("❌ Error checking subscription: " + e.getMessage());
+        return false;
+    }
+}
+
 
     // READ: Get subscriptions by learner ID (for Learner Dashboard)
     public List<Subscription> getSubscriptionsByLearnerId(int learnerId) {
@@ -151,6 +166,39 @@ String sql =
             return false;
         }
     }
+    
+    public List<Course> getCoursesByLearnerId(int learnerId) {
+    List<Course> courses = new ArrayList<>();
+    String sql = "SELECT c.* " +
+                 "FROM subscription s " +
+                 "JOIN course c ON s.Course_ID = c.Course_ID " +
+                 "WHERE s.Learner_ID = ?";
+
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, learnerId);
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            Course course = new Course(
+                rs.getInt("Course_ID"),
+                rs.getString("Course_Name"),
+                rs.getString("Description"),
+                rs.getString("Category"),
+                rs.getInt("Duration"),
+                rs.getInt("Instructor_ID"),
+                rs.getString("Prerequisite"),
+                rs.getDouble("Price")
+            );
+            courses.add(course);
+        }
+
+    } catch (SQLException e) {
+        System.out.println("❌ Error fetching courses by learner ID: " + e.getMessage());
+    }
+
+    return courses;
+}
+
 
     // DELETE: Remove subscription
     public boolean deleteSubscription(int subscriptionId) {

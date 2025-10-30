@@ -4,6 +4,7 @@
  */
 package com.ecms.dbms.controllers;
 
+import com.ecms.dbms.SessionManager;
 import com.ecms.dbms.Utilities;
 import java.io.IOException;
 import java.net.URL;
@@ -51,7 +52,11 @@ void showMyProfile() {
     System.out.println("profuile");
     Utilities.loadPageInto(contentArea, "MyProfile");
 }
-    
+      @FXML
+    void logout() throws IOException {
+        Utilities.setRoot("InstructorLogin");
+          SessionManager.clearSession();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

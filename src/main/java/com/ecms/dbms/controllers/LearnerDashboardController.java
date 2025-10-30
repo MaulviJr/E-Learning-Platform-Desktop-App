@@ -1,26 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package com.ecms.dbms.controllers;
 
+import com.ecms.dbms.SessionManager;
+import com.ecms.dbms.Utilities;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author abdul
- */
 public class LearnerDashboardController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private AnchorPane contentArea;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        // Load the initial view
+        showMyCourses();
+    }
+
+    @FXML
+    void showMyCourses() {
+        Utilities.loadPageInto(contentArea, "LearnerMyCourses");
+    }
+
+    @FXML
+    void showAllCourses() {
+        Utilities.loadPageInto(contentArea, "AllCourses");
+    }
+
+    @FXML
+    void showMyProfile() {
+        Utilities.loadPageInto(contentArea, "LearnerProfile");
+    }
     
+     @FXML
+    void logout() throws IOException {
+        Utilities.setRoot("LearnerLogin");
+        SessionManager.clearSession();
+    }
 }
