@@ -41,5 +41,6 @@
             <PasswordField fx:id="password" layoutX="477.0" layoutY="558.0" prefHeight="25.0" prefWidth="327.0" />
          </children>
       </AnchorPane>
+      <Button fx:id="backBtn" layoutX="68.0" layoutY="48.0" mnemonicParsing="false" onAction="#navigateLogin" text="Back" />
    </children>
 </AnchorPane>

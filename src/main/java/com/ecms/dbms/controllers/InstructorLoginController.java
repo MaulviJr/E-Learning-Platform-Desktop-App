@@ -55,7 +55,12 @@ private Connection conn;
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         conn = DatabaseConnection.getConnection();
-    }    
+    } 
+    
+    @FXML
+       private void navigateHome() throws IOException {
+        Utilities.setRoot("Login");
+    }
     @FXML
     private void handleLogin() throws IOException {
         

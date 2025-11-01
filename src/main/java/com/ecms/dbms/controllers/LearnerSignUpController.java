@@ -18,6 +18,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import com.ecms.dbms.ValidationUtil;
+import java.io.IOException;
 
 public class LearnerSignUpController implements Initializable {
 
@@ -59,6 +60,11 @@ private static final String CONTACT_REGEX = "^(\\+92|0)?3\\d{9}$"; // Pakistani 
         // Populate gender dropdown
         genderComboBox.getItems().addAll("M", "F");
         genderComboBox.setValue("M"); // Default selection
+    }
+    
+     @FXML
+    private void navigateLogin() throws IOException {
+        Utilities.setRoot("LearnerLogin");
     }
 
     @FXML

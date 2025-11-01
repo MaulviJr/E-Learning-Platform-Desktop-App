@@ -64,6 +64,7 @@ void openAddCourse() {
     @FXML private TableColumn<Course, String> colDuration;
      @FXML private TableColumn<Course, Integer> colPrice;
      @FXML private Button deleteBtn;
+     @FXML private Button updateBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -81,10 +82,15 @@ void openAddCourse() {
 
     // hide button by default
     deleteBtn.setVisible(false);
+    updateBtn.setVisible(false);
 
     // listen for row selection
     courseTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSel, newSel) -> {
         deleteBtn.setVisible(newSel != null);
+    });
+    
+     courseTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSel, newSel) -> {
+        updateBtn.setVisible(newSel != null);
     });
     }
     
@@ -111,5 +117,36 @@ void handleDeleteCourse(ActionEvent event) {
         }
     });
 }
+
+@FXML
+private void handleUpdateCourse() {
+    Course selectedCourse = courseTable.getSelectionModel().getSelectedItem();
+    if (selectedCourse == null) {
+        Utilities.showAlert(Alert.AlertType.WARNING, "No Selection", "Please select a course to update.");
+        return;
+    }
+
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/UpdateCourse.fxml"));
+        Parent root = loader.load();
+
+        UpdateCourseController controller = loader.getController();
+        controller.setCourse(selectedCourse); // pass selected course
+
+        Stage stage = new Stage();
+        stage.setTitle("Update Course");
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+
+        // Refresh table after update
+//        refreshCourses();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+        Utilities.showAlert(Alert.AlertType.ERROR, "Error", "Unable to open Update Course window.");
+    }
+}
+
     
 }

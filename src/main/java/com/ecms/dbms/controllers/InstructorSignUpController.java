@@ -5,6 +5,7 @@ import com.ecms.dbms.ValidationUtil;
 import com.ecms.dbms.data.InstructorDAO;
 import com.ecms.dbms.models.Instructor;
 import com.ecms.dbms.database.DatabaseConnection;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.time.LocalDate;
@@ -121,6 +122,10 @@ public class InstructorSignUpController implements Initializable {
         qualificationText.clear();
         specializationText.clear();
         contactText.clear();
+    }
+    @FXML
+    private void navigateLogin() throws IOException {
+        Utilities.setRoot("InstructorLogin");
     }
 
     // Utility method to show alerts

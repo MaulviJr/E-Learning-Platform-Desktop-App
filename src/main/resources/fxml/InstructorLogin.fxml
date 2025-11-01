@@ -25,5 +25,6 @@
       <Label fx:id="labelText" layoutX="557.0" layoutY="485.0" onMouseClicked="#moveToInstructorSignUp" text="Don't have an Account? SignUp" />
       <Button fx:id="SignUpBtn" layoutX="567.0" layoutY="514.0" mnemonicParsing="false" onAction="#moveToInstructorSignUp" prefHeight="26.0" prefWidth="148.0" text="Signup" />
       <PasswordField fx:id="passwordField" layoutX="566.0" layoutY="388.0" />
+      <Button fx:id="homeBtn" layoutX="55.0" layoutY="44.0" mnemonicParsing="false" onAction="#navigateHome" text="Back" />
    </children>
 </AnchorPane>

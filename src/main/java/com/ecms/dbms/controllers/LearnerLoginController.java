@@ -49,6 +49,13 @@ public class LearnerLoginController implements Initializable {
         conn = DatabaseConnection.getConnection();
     }   
     
+    
+    
+       @FXML
+       private void navigateHome() throws IOException {
+        Utilities.setRoot("Login");
+    }
+    
      @FXML
     private void handleLogin() throws IOException {
         String username = usernameField.getText();
